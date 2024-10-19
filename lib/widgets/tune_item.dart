@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:tunes_app/Models/tune_model.dart';
 
@@ -10,8 +9,7 @@ class TuneItem extends StatelessWidget {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          final player = AudioPlayer();
-          player.play(AssetSource(tuneModel.tune));
+          tuneModel.playSound();
         },
         child: Container(
           color: tuneModel.color,
